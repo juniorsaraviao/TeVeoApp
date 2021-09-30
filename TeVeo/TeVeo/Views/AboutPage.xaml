@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeVeo.Views.AboutPage"
+             xmlns:fontAwesome="clr-namespace:TeVeo.Util" 
              xmlns:vm="clr-namespace:TeVeo.ViewModels"
-             Title="{Binding Title}">
+             Title="Servicios">
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
@@ -15,38 +16,120 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
-                </ContentView>
+    <Grid RowDefinitions="*,*,*"
+          ColumnDefinitions="*,*,*"
+          Margin="20">
+        <Frame Grid.Column="1"
+               Grid.Row="0"
+               Padding="10"
+               Margin="5"
+               HasShadow="True"
+               BackgroundColor="Blue"
+               CornerRadius="20">
+            <StackLayout VerticalOptions="Center">
+                <StackLayout >
+                    <Label HorizontalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           TextColor="White"
+                           Text="{x:Static fontAwesome:FontAwesomeIcon.Map}"
+                           FontFamily="FAFree-Solid"/>
+                    <Label Text="Mapa"
+                           TextColor="White"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalTextAlignment="Center"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateMapCommand}"/>
+                </StackLayout.GestureRecognizers>
             </StackLayout>
+        </Frame>
+
+        <Frame Grid.Column="0"
+               Grid.Row="1"
+               Padding="10"
+               Margin="5"
+               HasShadow="True"
+               BackgroundColor="Red"
+               CornerRadius="20">
+            <StackLayout VerticalOptions="Center">
+                <Label HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       FontSize="50"
+                       TextColor="White"
+                       Text="{x:Static fontAwesome:FontAwesomeIcon.Route}"
+                       FontFamily="FAFree-Solid"/>
+                <Label Text="Rutas"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Grid.Column="1"
+               Grid.Row="2"
+               Padding="10"
+               Margin="5"
+               HasShadow="True"
+               BackgroundColor="Orange"
+               CornerRadius="20">
+            <StackLayout VerticalOptions="Center">
+                <Label HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       FontSize="50"
+                       TextColor="White"
+                       Text="{x:Static fontAwesome:FontAwesomeIcon.Bluetooth}"
+                       FontFamily="FABrands-R"/>
+                <Label Text="Conexión Raspberry"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Grid.Column="2"
+               Grid.Row="1"
+               Padding="10"
+               Margin="5"
+               HasShadow="True"
+               BackgroundColor="Green"
+               CornerRadius="20">
+            <StackLayout VerticalOptions="Center">
+                <Label HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       FontSize="50"
+                       TextColor="White"
+                       Text="{x:Static fontAwesome:FontAwesomeIcon.Pictures}"
+                       FontFamily="FAFree-Solid"/>
+                <Label Text="Imágenes"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </Frame>
+
+        <StackLayout Grid.Column="1"
+                     Grid.Row="1"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+            <Label VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   FontSize="80"
+                   TextColor="Black"
+                   Text="{x:Static fontAwesome:FontAwesomeIcon.Car}"
+                   FontFamily="FAFree-Solid"/>
         </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Start developing now" FontSize="Title"/>
-                <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="0,0,0,0"/>
-                <Label FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Learn more at "/>
-                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-            </StackLayout>
-        </ScrollView>
+
     </Grid>
 
 </ContentPage>

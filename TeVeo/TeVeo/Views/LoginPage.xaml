@@ -7,8 +7,17 @@
              x:Class="TeVeo.Views.LoginPage"
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand">            
+            
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Label Text="Usuario"/>
+                <Entry Placeholder="Ingresar usuario" Keyboard="Text"/>
+                <Label Text="Constraseña"/>
+                <Entry Placeholder="Ingresar constraseña" IsPassword="True"/>
+                <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
