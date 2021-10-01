@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Plugin.LocalNotifications;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 using Xamarin.Forms;
 using Xamarin.Forms.GoogleMaps;
@@ -27,6 +29,29 @@ namespace TeVeo.Views
             }
          });
          task.Start();
+         Notification();
+         Task.Run(async () => await TextToSpeechPlay());         
+
+      }
+
+      private void Notification()
+      {         
+         CrossLocalNotifications.Current.Show("TeVeo en este momento", "Hemos detectado 3 vehículos y 3 motocicletas alrededor tuyo, cuidado!", 0, DateTime.Now.AddSeconds(7));
+      }
+
+      private async Task TextToSpeechPlay()
+      {
+         var locales = await TextToSpeech.GetLocalesAsync();
+
+         // Grab the first locale
+         var locale = locales.FirstOrDefault(x=>x.Country == "MEX");
+         var settings = new SpeechOptions()
+         {
+            Volume = 1f,
+            Pitch = 1.0f,
+            Locale = locale
+         };
+         await TextToSpeech.SpeakAsync("Hemos detectado 3 vehículos y 3 motocicletas alrededor tuyo, cuidado!", settings);
       }
 
       private void SetValues()

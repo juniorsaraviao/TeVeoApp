@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "685848003492",
-    "project_id": "smarttraffic-327302",
-    "storage_bucket": "smarttraffic-327302.appspot.com"
+    "project_number": "233830561531",
+    "project_id": "teveoapp-ef887",
+    "storage_bucket": "teveoapp-ef887.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:685848003492:android:cf919b017aba772911b731",
+        "mobilesdk_app_id": "1:233830561531:android:a0c15cd7772e2de22be25e",
         "android_client_info": {
           "package_name": "com.companyname.teveo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "685848003492-0tu5na9grrorcfdjaeddj398i0q7seeh.apps.googleusercontent.com",
+          "client_id": "233830561531-54pmbfom6mkf96go5ka600ucs3knav59.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBTA7FclXFeMK_EO2N5S10POWtgI-_10d0"
+          "current_key": "AIzaSyD9oHM9btxL1x6KM1yJf2Uk0HR-xTgJabg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "685848003492-0tu5na9grrorcfdjaeddj398i0q7seeh.apps.googleusercontent.com",
+              "client_id": "233830561531-54pmbfom6mkf96go5ka600ucs3knav59.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -7,7 +7,7 @@
     <ContentPage.Content>
         <StackLayout>
             <maps:Map x:Name="map"
-                      InitialCameraUpdate="-12.022741546003584, -77.04752850705957, 15"/>
+                      InitialCameraUpdate="-12.022741546003584, -77.04752850705957, 16"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

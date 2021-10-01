@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.LocalNotifications;
+using System;
 using System.ComponentModel;
 using TeVeo.ViewModels;
 using Xamarin.Forms;
@@ -17,6 +18,6 @@ namespace TeVeo.Views
       {
          base.OnAppearing();
          ( (AboutViewModel) BindingContext).InitAbout(Navigation);
-      }
+      }      
    }
 }
