@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:TeVeo.ViewModels"
+             x:Class="TeVeo.Views.RaspberryImagesPage"
+             Title="Raspberry Images"
+             BackgroundColor="#0A1021">
+    
+    <ContentPage.BindingContext>
+        <viewmodels:RaspberryImagesViewModel/>
+    </ContentPage.BindingContext>    
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <CarouselView ItemsSource="{Binding ImagesList}"
+                          IndicatorView="indicatorView"
+                          Loop="False"
+                          PeekAreaInsets="20">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10,8,10,8"
+                              Margin="20">
+
+                            <Frame Padding="0"
+                                   CornerRadius="8"
+                                   HasShadow="True"
+                                   WidthRequest="320">
+
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Image Source="{Binding ImageSource}"
+                                           HeightRequest="200"
+                                           WidthRequest="350"
+                                           Aspect="AspectFit"/>
+
+                                    <Label Text="{Binding ImageName}"
+                                           HorizontalOptions="Center"/>
+                                </StackLayout>                               
+
+                            </Frame>                            
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="CurrentItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1.0" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="PreviousItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value=".95" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="NextItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value=".95" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="DefaultItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value=".95" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>                        
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="indicatorView"
+                           IndicatorColor="LightGray"
+                           SelectedIndicatorColor="DarkGray"
+                           HorizontalOptions="Center" 
+                           Margin="5" Padding="5"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

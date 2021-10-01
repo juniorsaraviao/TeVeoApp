@@ -14,10 +14,11 @@ namespace TeVeo.Views
          InitializeComponent();
       }
 
-      protected override void OnAppearing()
+      protected async override void OnAppearing()
       {
          base.OnAppearing();
          ( (AboutViewModel) BindingContext).InitAbout(Navigation);
+         await ( (AboutViewModel) BindingContext).TextToSpeechPlay();
       }      
    }
 }

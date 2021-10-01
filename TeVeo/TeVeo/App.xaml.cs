@@ -15,7 +15,7 @@ namespace TeVeo
          InitializeComponent();
 
          DependencyService.Register<MockDataStore>();
-         MainPage = new LoginPage();
+         MainPage = new AppShell();
          CrossFirebasePushNotification.Current.Subscribe("all");
          CrossFirebasePushNotification.Current.OnTokenRefresh += Current_OnTokenRefresh;
       }

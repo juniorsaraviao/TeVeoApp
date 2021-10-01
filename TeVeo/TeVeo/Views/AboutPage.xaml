@@ -4,7 +4,8 @@
              x:Class="TeVeo.Views.AboutPage"
              xmlns:fontAwesome="clr-namespace:TeVeo.Util" 
              xmlns:vm="clr-namespace:TeVeo.ViewModels"
-             Title="Servicios">
+             Title="Servicios"
+             BackgroundColor="#0A1021">
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
@@ -90,6 +91,9 @@
                        HorizontalOptions="CenterAndExpand"
                        VerticalTextAlignment="Center"
                        VerticalOptions="CenterAndExpand"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BluetoothCommand}"/>
+                </StackLayout.GestureRecognizers>
             </StackLayout>
         </Frame>
 
@@ -113,21 +117,25 @@
                        VerticalTextAlignment="Center"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ImagesCommand}"/>
+                </StackLayout.GestureRecognizers>
             </StackLayout>
         </Frame>
 
         <StackLayout Grid.Column="1"
                      Grid.Row="1"
                      HorizontalOptions="FillAndExpand"
-                     VerticalOptions="FillAndExpand">
+                     VerticalOptions="CenterAndExpand">
             <Label VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand"
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center"
                    FontSize="80"
-                   TextColor="Black"
+                   TextColor="White"
                    Text="{x:Static fontAwesome:FontAwesomeIcon.Car}"
                    FontFamily="FAFree-Solid"/>
+            <Label Text="Conductor1" TextColor="White" HorizontalTextAlignment="Center"/>
         </StackLayout>
 
     </Grid>

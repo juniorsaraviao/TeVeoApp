@@ -21,5 +21,6 @@ namespace TeVeo.Util
       public const string Map                      = "\uf5a0";
       public const string Bluetooth                = "\uf293";
       public const string Pictures                 = "\uf302";
+      public const string Biking                   = "\uf84a";
    }
 }

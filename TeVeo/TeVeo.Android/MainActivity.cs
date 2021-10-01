@@ -10,7 +10,7 @@ using Plugin.FirebasePushNotification;
 
 namespace TeVeo.Droid
 {
-   [Activity(Label = "TeVeo", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+   [Activity(Label = "TeVeo", Icon = "@mipmap/teveo", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         static readonly string TAG = "MainActivity"; 
@@ -36,6 +36,8 @@ namespace TeVeo.Droid
             //Xamarin.FormsMaps.Init(this, savedInstanceState);
             Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
+            Window.SetStatusBarColor(Android.Graphics.Color.Rgb(10, 16, 33));
+            Window.SetNavigationBarColor(Android.Graphics.Color.Rgb(10, 16, 33));
             FirebasePushNotificationManager.ProcessIntent(this, Intent);
         }
 
